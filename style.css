@@ -12,6 +12,7 @@
   background-color: #000000;
 }
 
+
 /*Navbar*/
 
 .logo{
@@ -69,6 +70,45 @@
 .nav-link:hover {
   color: #9c27b0;
 }
+
+/* Ensure the dropdown menu is hidden initially */
+.nav-item.dropdown .dropdown-menu {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+}
+
+/* Show the submenu when hovering over the parent menu item */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  position: absolute; /* Ensures the submenu doesn't push down content */
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.dropdown-item{
+  color:#ffffff;
+}
+
+.dropdown-item:hover{
+  color:#9c27b0;
+  background-color: #ffffff;
+}
+
+/* Ensuring the dropdown-toggle cursor still behaves like a button */
+.nav-item.dropdown:hover .nav-link {
+  cursor: pointer;
+}
+
 
 /* Responsive styling for mobile and tablets */
 @media (max-width: 962px){
@@ -597,7 +637,7 @@ button {
 
 .contact{
   color: #ffffff;
-  font-family: "Archivo Black", sans-serif;
+  /* font-family: "Archivo Black", sans-serif; */
   font-size: 35px;
 }
 
